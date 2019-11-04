@@ -14,8 +14,8 @@ public class CurrencyConversionController {
 	CurrencyConverterService service;
 	
 	@GetMapping("/currency-converter/from/{from}/to/{to}/quantity/{quantity}")
-	public String converter(@PathVariable String from, @PathVariable String to, @PathVariable int quantity) throws JsonProcessingException {
-		service.convert(from,to);
-		return "welocme " + from + to + quantity;
+	public Double converter(@PathVariable String from, @PathVariable String to, @PathVariable int quantity) throws JsonProcessingException {
+		Double exchangeRate=service.convert(from,to);
+		return exchangeRate*quantity;
 	}
 }
