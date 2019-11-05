@@ -35,15 +35,15 @@ public class ExchangeRates {
 	public ExchangeRates() {
 	}
 
-	public ExchangeRates(String base, Date date, long timeLastUpdated, String to, Double exchangeRate) {
+	public ExchangeRates(String base, Date date, long timeLastUpdated, String to, String rate) {
 		super();
 		this.base = base;
 		this.date = date;
 		this.timeLastUpdated = timeLastUpdated;
 		this.toCurrency = to;
-		this.exchangeRate = exchangeRate;
+		this.exchangeRate = Double.valueOf(rate);
 	}
-
+	
 	public String getTo() {
 		return toCurrency;
 	}

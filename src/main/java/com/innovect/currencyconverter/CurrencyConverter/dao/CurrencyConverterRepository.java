@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import com.innovect.currencyconverter.CurrencyConverter.model.ExchangeRates;
 
 @Repository
-public interface CurrencyConverterRepository extends CrudRepository<ExchangeRates, String> {
+public interface CurrencyConverterRepository extends CrudRepository<ExchangeRates, Long> {
 
 	ExchangeRates findByToCurrency(String to);
 
