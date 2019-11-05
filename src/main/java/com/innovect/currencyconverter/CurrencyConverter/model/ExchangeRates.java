@@ -1,47 +1,23 @@
 package com.innovect.currencyconverter.CurrencyConverter.model;
 
 import java.util.Date;
-import java.util.Map;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import org.hibernate.annotations.GeneratorType;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "forex")
 public class ExchangeRates {
 
-	public String getToCurrency() {
-		return toCurrency;
-	}
-
-	public void setToCurrency(String toCurrency) {
-		this.toCurrency = toCurrency;
-	}
-
-	public Double getExchangeRate() {
-		return exchangeRate;
-	}
-
-	public void setExchangeRate(Double exchangeRate) {
-		this.exchangeRate = exchangeRate;
-	}
-
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long id;
-	
-	@Column(name="base")
+
+	@Column(name = "base")
 	private String base;
 
 	@Column(name = "date")
@@ -65,27 +41,11 @@ public class ExchangeRates {
 		this.date = date;
 		this.timeLastUpdated = timeLastUpdated;
 		this.toCurrency = to;
-		this.exchangeRate= exchangeRate;
+		this.exchangeRate = exchangeRate;
 	}
 
 	public String getTo() {
 		return toCurrency;
-	}
-
-	public void setTo(String to) {
-		this.toCurrency = to;
-	}
-
-	public void setBase(String base) {
-		this.base = base;
-	}
-
-	public void setDate(java.util.Date date) {
-		this.date = date;
-	}
-
-	public void setTimeLastUpdated(long timeLastUpdated) {
-		this.timeLastUpdated = timeLastUpdated;
 	}
 
 	public String getBase() {
@@ -98,6 +58,14 @@ public class ExchangeRates {
 
 	public long getTimeLastUpdated() {
 		return timeLastUpdated;
+	}
+
+	public String getToCurrency() {
+		return toCurrency;
+	}
+
+	public Double getExchangeRate() {
+		return exchangeRate;
 	}
 
 }
